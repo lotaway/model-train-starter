@@ -5,6 +5,11 @@ import random
 import gym
 import numpy as np
 from collections import deque
+from langgraph.checkpoint.memory import MemorySaver
+
+# @TODO session checkpoint for shared memory to multiply agents
+checkpointer = MemorySaver()
+
 
 class DQN(nn.Module):
     def __init__(self, state_dim, action_dim):
